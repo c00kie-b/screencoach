@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:translationY="0dp"
+    tools:context=".Activity.MainActivity">
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-103dp"
+        android:layout_marginBottom="53dp"
+        android:src="@drawable/logo"
+        android:translationX="10dp"
+        android:translationY="-10dp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:hint="Username"
+        android:translationX="50dp"
+        android:translationY="50dp"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_alignStart="@+id/username"
+        android:layout_alignEnd="@+id/username"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="7dp"
+        android:hint="Password"
+        android:translationX="50dp"
+        android:translationY="50dp"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/repassword"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="-4dp"
+        android:hint="Re-enter Password"
+        android:translationX="50dp"
+        android:translationY="50dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/repassword"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#A79277"
+        android:text="Register"
+        android:textColor="@color/white"
+        android:translationX="50dp"
+        android:translationY="50dp" />
+
+
+    <Button
+        android:id="@+id/btnsignin"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnsignup"
+        android:layout_marginEnd="-17dp"
+        android:background="#00FFEBEE"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Log in"
+        android:textColor="#803D3B"
+        android:translationX="50dp"
+        android:translationY="610dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Already have an account?"
+        android:textColor="#A8A4A8"
+        android:translationX="55dp"
+        android:translationY="623dp" />
+
+</RelativeLayout>

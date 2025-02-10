@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AiChatbot">
+
+    <ImageView
+        android:id="@+id/rectangle_image"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:src="@drawable/baby"
+        android:scaleType="centerCrop"/>
+
+    <!-- Toolbar -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rectangle_image"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="6dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="SCREENCOACH"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rectangle_image">
+
+
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/center_image"
+        android:layout_width="312dp"
+        android:layout_height="270dp"
+        android:layout_below="@id/toolbar_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:src="@drawable/hehe" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="1dp" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:textSize="25dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:id="@+id/bottom_layout">
+
+        <EditText
+            android:id="@+id/message_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/send_btn"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/poppins_light"
+            android:hint="Write here "
+            android:padding="16dp" />
+
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/send_btn"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/baseline_send_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

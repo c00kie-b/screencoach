@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
+
+    <uses-feature android:name="android.software.device_admin" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="ScreenCoach"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true">
+        <activity
+            android:name=".Activity.LocationTriggerActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+
+        <receiver
+            android:name=".Service.RestartService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Service.AdminReceiver"
+            android:exported="false"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+        </receiver>
+        <service
+            android:name=".Service.ForegroundServicee"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="To run service in the background." />
+        </service>
+        <service
+            android:name=".Service.NotificationService"
+            android:exported="false"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Service.LogURLService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service" />
+        </service>
+        <service
+            android:name=".Service.MyAccessibilityService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Achievix">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.EditScheduleActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.NoOfLaunchesActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.FixedBlockActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.QuickBlockActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.SpecificTimeActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.UsageTimeActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.NewScheduleActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.DrawOnTopScreenActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AppSelectActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AppBlockActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.EnterPasswordActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AboutActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.DrawOnTopLaunchActivityy"
+            android:exported="false"
+            android:noHistory="true"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Permission.GetNotificationAccesss"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Permission.GetDrawOverAppsPermissionn"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Permission.GetUsageStatsPermissionActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.UsageOverviewActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.MainActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.SplashScreenActivityy"
+            android:exported="true"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AppInsightsActivityy"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.DrawOnTopScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.DrawOnTopLaunchActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.UsageOverviewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.ScreenTimeTracker"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AppInsightsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AdaptiveFocusZone"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.AiChatbot"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.Blocking"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.DashAppMon"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.Suggestions"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Permission.GetUsageStatsPermissionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Achievix" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Achievix" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAZVhGBk9SUd9nMkPVjtz2V9pmboog7SpI" />
+        <meta-data
+            android:name="AccessoryServicesLocation"
+            android:value="@string/accessory_services_location" />
+    </application>
+</manifest>

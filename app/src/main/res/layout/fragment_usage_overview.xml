@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.UsageOverviewFragment"
+    tools:ignore="HardcodedText,SpUsage,ContentDescription">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <!-- Loading Layout -->
+        <LinearLayout
+            android:id="@+id/loading_usage_overview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Loading. Please Wait..."
+                android:textColor="@color/black"
+                android:layout_marginVertical="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="18dp" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="15dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="#B5C18E"
+                android:indeterminateTintMode="src_atop"
+                android:scrollbarStyle="insideOverlay" />
+        </LinearLayout>
+
+        <!-- Usage Overview Layout -->
+        <LinearLayout
+            android:id="@+id/ll_usage_overview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Spinner Layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/app_block_theme">
+
+                <Spinner
+                    android:id="@+id/usage_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <!-- Total Usage Layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:id="@+id/clock"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/clock_icon" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginEnd="15dp"
+                        android:text="Total time spent looking at your phone"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_total_usage_overview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="1 hrs 2 mins"
+                        android:textColor="@color/black"
+                        android:textSize="25dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Screen Time Card Layout -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dash_ai"
+                android:layout_width="357dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#B5C18E"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:id="@+id/screentime"
+                            android:layout_width="242dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="50dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:padding="10dp"
+                            android:text="Screen Time Category"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/screentime_tip"
+                            android:layout_width="248dp"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Tip"
+                            android:fontFamily="@font/poppins_light"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/usage_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="-150dp"
+                        android:layout_marginRight="-135dp"
+                        app:srcCompat="@drawable/logo_usage" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Empty Message Layout -->
+            <TextView
+                android:id="@+id/empty_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="No usage stats available"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_light"
+                android:layout_marginTop="20dp" />
+
+            <!-- Recycler View Layout -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_usage_overview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:scrollbarSize="0dp"
+                android:scrollbars="vertical" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

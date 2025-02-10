@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:translationY="0dp"
+    tools:context=".Activity.LoginActivity"
+    >
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-8dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="-15dp"
+        android:src="@drawable/logo"
+        android:translationX="15dp"
+        android:translationY="40dp" />
+
+    <EditText
+        android:id="@+id/username1"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Username"
+        android:translationX="50dp"
+        android:translationY="270dp"
+        />
+
+    <EditText
+        android:id="@+id/password1"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username1"
+        android:layout_alignStart="@+id/username1"
+        android:layout_alignEnd="@+id/username1"
+        android:layout_marginStart="-6dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="6dp"
+        android:hint="Password"
+        android:translationX="55dp"
+        android:translationY="120dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btnsignin1"
+        android:layout_width="281dp"
+        android:layout_height="49dp"
+        android:layout_below="@+id/password1"
+        android:layout_alignStart="@+id/password1"
+        android:layout_alignEnd="@+id/password1"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="-4dp"
+        android:backgroundTint="#A79277"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Log In"
+        android:translationX="50dp"
+        android:translationY="-40dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/newAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Don't have an account?"
+        android:textColor="#A8A4A8"
+        android:translationX="50dp"
+        android:translationY="545dp" />
+
+    <Button
+        android:id="@+id/btnbacksignin"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/newAcc"
+        android:layout_marginEnd="-102dp"
+        android:background="#00FFEBEE"
+        android:text="Sign up"
+        android:textColor="#803D3B"
+        android:translationX="50dp"
+        android:translationY="530dp" />
+
+
+</RelativeLayout>
